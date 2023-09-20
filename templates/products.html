@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css' ) }}">
+
+    <title>Products</title>
+</head>
+<body>
+    <div class="container">
+        <div class="data">
+
+            {% for product in products: %}
+                <div class="data">
+                    <h1>Product Name: {{  product['name'] }}  </h1>
+                    <h1>Product Price: {{  product['price'] }}  </h1>
+                    <h3>Product Description: {{  product['Description'] }}  </h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
