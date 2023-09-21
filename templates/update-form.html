@@ -8,18 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <form class="needs-validation" action="/register" method="POST" novalidate >
+        <h1>Update the user Details</h1>
+        <form class="needs-validation" action="/update-user/{{ user[0] }}" method="POST" novalidate >
             <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" name="fname" placeholder="" value="" required>
+                <input type="text" class="form-control" id="firstName" name="fname" placeholder="" value=" {{ user[1] }}" required>
                 <div class="invalid-feedback">
                 Valid first name is required.
                 </div>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" name="lname" placeholder="" value="" required>
+                <input type="text" class="form-control" id="lastName" name="lname" placeholder="" value=" {{ user[2] }}" required>
                 <div class="invalid-feedback">
                 Valid last name is required.
                 </div>
@@ -41,7 +42,7 @@
 
             <div class="mb-3">
             <label for="email">Email <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+            <input type="email" class="form-control" id="email" value="{{ user[3] }}" name="email" placeholder="you@example.com">
             <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
             </div>
