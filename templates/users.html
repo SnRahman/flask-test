@@ -34,7 +34,7 @@
         <div class="heading">
             <h1>Users</h1>
             <div>
-                <a class="btn btn-primary" href="/add-user"> Add New user</a>
+                <a class="btn btn-primary" href="/add-user"> Add User</a>
             </div>
         </div>
         
@@ -56,7 +56,7 @@
                         <td> {{ user[1] }} </td>
                         <td> {{ user[2] }} </td>
                         <td> {{ user[3] }} </td>
-                        <td> <a href="/update-user/{{ user[0] }}"><i class="fa-solid fa-square-pen"></i></a> <a href="/delete-user/{{ user[0] }}"><i class="fa-sharp fa-solid fa-trash"></i></a> </td>
+                        <td> <a href="/update-user/{{ user[0] }}"><i class="fa-solid fa-square-pen"></i></a> <a href="/delete-user/{{ user[0] }}" style="color:red"><i class="fa-sharp fa-solid fa-trash"></i></a> </td>
                     </tr>
                 {% endfor %}
             </tbody>

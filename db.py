@@ -1,9 +1,11 @@
 from flask import Flask,render_template, request, redirect, url_for
-import mysql.connector
+from mysql import connector
+
+# import mysql.connector
 
 
 # Create a MySQL database connection
-connection = mysql.connector.connect(host='localhost',user='root' , password = '', database = 'flask-test' )
+connection = connector.connect(host='localhost',user='root' , password = '', database = 'flask-test' )
 
 app = Flask(__name__)
 
