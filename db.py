@@ -32,7 +32,6 @@ def add_user():
 
 
 @app.route('/register',methods=['POST'])
-
 def register():
     fname = request.form['fname']
     lname = request.form['lname']
@@ -84,6 +83,17 @@ def update_user(id):
             return redirect(url_for('get_users'))
         else:
             return redirect(url_for('update-user',id=id))
+
+
+@app.route('/delete-user/<id>')
+def delete_user(id):
+    db = connection.cursor()
+    # db.execute('DELETE FROM users WHERE id = %s',(id))
+    db.execute(f'DELETE FROM users WHERE id = {id}')
+    connection.commit()
+    db.close()
+    return redirect(url_for('get_users'))
+    
 
 if __name__ == '__main__':
     app.debug = True
